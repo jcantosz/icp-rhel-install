@@ -9,7 +9,7 @@ The goals of this project are to:
 
 This project does not lay down any infrastructure, and expects you to have the required machines provisioned prior to beginning.
 
-Instructions from the [pre-reqs doc](https://www.ibm.com/support/knowledgecenter/SSBS6K_1.2.0/installing/prep_cluster.html) and [installation doc](https://www.ibm.com/support/knowledgecenter/SSBS6K_1.2.0/installing/install_containers_CE.html). No steps labeled "optional" are taken
+Instructions from the [pre-reqs doc](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/installing/prep_cluster.html) and [installation doc](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/installing/install_containers_CE.html). No steps labeled "optional" are taken
 
 ## System Requirements
 This has been tested on RHEL 7.4
@@ -19,7 +19,7 @@ Requires sudo access (passwordless sudo will prevent some additional prompts).
 Passwordless SSH from the master to all the workers is required. (see [./01-1-passwordless-ssh.sh](scripts/01-1-passwordless-ssh.sh))
 
 ### Hardware  
-See [IBM Cloud Private Hardware Requirements](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_1.2.0/supported_system_config/hardware_reqs.html)
+See [IBM Cloud Private Hardware Requirements](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0/supported_system_config/hardware_reqs.html)
 
 This has been tested with:
 
