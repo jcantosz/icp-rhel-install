@@ -40,6 +40,11 @@ fi
 
 export NUM_WORKERS=${#WORKER_IPS[@]}
 
+# Get OS ID
+if [ -f /etc/os-release ]; then
+  source /etc/os-release
+  export OS="${ID}"
+fi
 
 #echo ${WORKER_HOSTNAMES}
 #export ARRAY_IDX=${!WORKER_IPS[*]}
