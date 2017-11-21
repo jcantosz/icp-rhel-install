@@ -4,7 +4,9 @@
 source 00-variables.sh
 
 # Disable SELinux
-sudo setenforce 0
+if [ "${OS}" == "rhel" ]; then
+  sudo setenforce 0
+fi
 
 # Set VM max map count (see max_map_count https://www.kernel.org/doc/Documentation/sysctl/vm.txt)
 sudo sysctl -w vm.max_map_count=262144
