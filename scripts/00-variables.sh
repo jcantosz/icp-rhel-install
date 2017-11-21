@@ -1,7 +1,7 @@
 #!/bin/bash
 # ----------------------------------------------------------------------------------------------------\\
 # Description:
-#   A basic
+#   A basic installer for IBM Cloud Private-CE 1.2.0 on RHEL 7.4
 # ----------------------------------------------------------------------------------------------------\\
 # Note:
 #   This assumes all VMs were provisioned to be accessable with the same SSH key
