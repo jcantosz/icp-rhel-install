@@ -34,7 +34,7 @@ This has been tested with:
 5. Review and run each of the scripts in numeric order [01-update-hosts.sh](scripts/01-update-hosts.sh) through [09-kubeconfig.sh](scripts/09-kubeconfig.sh). Accept any ssh host identity prompts if they appear.
 
 ## Other projects
-- https://github.com/IBM/deploy-ibm-cloud-private A more official Contains local Vagrant install or Terraform/Ansible installs for SoftLayer and OpenStack
+- https://github.com/IBM/deploy-ibm-cloud-private A more official installer. Contains a local Vagrant install or Terraform/Ansible installs for SoftLayer and OpenStack
 
 ## Dev Notes
 Tasks on each of the workers are run in series (more wokers == more time), these tasks should be improved to run in parallel
