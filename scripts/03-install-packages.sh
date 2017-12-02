@@ -15,7 +15,13 @@ if [ "$ARCH" == "ppc64le" ]; then
 else
   sudo yum-config-manager -y --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 fi
+sudo yum update -y
 sudo yum install -y docker-ce
+
+# Fall back to pinned version (no fallback for ppc)
+if [ "$?" == "1" ]; then
+  yum install --setopt=obsoletes=0 -y docker-ce-17.03.2.ce-1.el7.centos.x86_64 docker-ce-selinux-17.03.2.ce-1.el7.centos.noarch
+fi
 
 sudo yum install -y python-setuptools
 sudo easy_install pip
@@ -29,7 +35,14 @@ for ((i=0; i < $NUM_WORKERS; i++)); do
   else
     ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo yum-config-manager -y --add-repo https://download.docker.com/linux/centos/docker-ce.repo
   fi
+  
+  ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo yum update -y
   ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo yum install -y docker-ce
+
+  # Fall back to pinned version (no fallback for ppc)
+  if [ "$?" == "1" ]; then
+    ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} yum install --setopt=obsoletes=0 -y docker-ce-17.03.2.ce-1.el7.centos.x86_64 docker-ce-selinux-17.03.2.ce-1.el7.centos.noarch
+  fi
 
   ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo yum install -y python-setuptools
   ssh ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo easy_install pip
