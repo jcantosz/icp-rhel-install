@@ -40,6 +40,10 @@ fi
 
 export NUM_WORKERS=${#WORKER_IPS[@]}
 
+export ARCH="$(uname -m)"
+if [ "${ARCH}" != "x86_64" ]; then
+  export INCEPTION_TAG="-${ARCH}"
+fi
 
 #echo ${WORKER_HOSTNAMES}
 #export ARRAY_IDX=${!WORKER_IPS[*]}
