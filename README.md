@@ -1,3 +1,7 @@
+# Notice
+Sanjay is maintaing a more up-to-date fork of this project. Please see his work, and support the project here:
+https://github.com/joshisa/icp-rhel-install
+
 # ICP-ce bash install for RHEL
 A series of scripts to automate the installation of IBM Cloud Private-ce 2.1.0 on RHEL 7.4. 
 
